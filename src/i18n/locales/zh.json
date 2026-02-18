@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "features": "功能",
+    "quickStart": "快速开始",
+    "github": "GitHub"
+  },
+  "hero": {
+    "title": "Thank God It's Friday",
+    "subtitle": "你的个人 AI 助手",
+    "description": "一个基于 Go 的多智能体框架，将你常用聊天应用的消息路由到 LLM 驱动的 Agent。开源、自托管、完全可扩展。",
+    "getStarted": "快速开始",
+    "viewOnGithub": "在 GitHub 上查看"
+  },
+  "features": {
+    "sectionTitle": "Friday 能做什么",
+    "multiChannel": {
+      "title": "多渠道接入",
+      "description": "连接 Telegram、Lark 或 HTTP API —— 将任意聊天平台的消息路由到你的 Agent。"
+    },
+    "multiLLM": {
+      "title": "多模型 + 自动回退",
+      "description": "OpenAI、Anthropic、Gemini、Ollama、Qwen —— 自由切换模型，支持自动回退。"
+    },
+    "singleBinary": {
+      "title": "单 Binary 运行",
+      "description": "一个 binary 直接运行，支持 Linux、macOS、Windows 交叉编译。"
+    },
+    "sandbox": {
+      "title": "沙箱安全",
+      "description": "Tool call 在隔离的沙箱中执行，保护你的系统环境。"
+    },
+    "skills": {
+      "title": "Skills 扩展系统",
+      "description": "基于 YAML + Markdown 的可扩展行为插件。构建你自己的或使用社区 Skills。"
+    },
+    "easyDeploy": {
+      "title": "轻松部署",
+      "description": "Docker 或 Go install —— 几分钟内完成部署。"
+    }
+  },
+  "quickStart": {
+    "sectionTitle": "快速开始",
+    "goTab": "Go 安装",
+    "dockerTab": "Docker",
+    "goCode": "go install github.com/tgifai/friday@latest\nfriday serve -c config.yaml",
+    "dockerCode": "docker run -d \\\n  -v ./config.yaml:/app/config.yaml \\\n  tgifai/friday"
+  },
+  "integrations": {
+    "sectionTitle": "集成",
+    "channels": "渠道",
+    "providers": "LLM 提供商"
+  },
+  "footer": {
+    "product": "产品",
+    "community": "社区",
+    "project": "项目",
+    "features": "功能",
+    "docs": "文档",
+    "github": "GitHub",
+    "issues": "Issues",
+    "blog": "博客",
+    "license": "开源协议",
+    "builtBy": "由 TGIF AI 构建"
+  },
+  "language": {
+    "en": "EN",
+    "zh": "中文"
+  }
+}

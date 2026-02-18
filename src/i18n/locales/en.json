@@ -1,0 +1,69 @@
+{
+  "nav": {
+    "features": "Features",
+    "quickStart": "Quick Start",
+    "github": "GitHub"
+  },
+  "hero": {
+    "title": "Thank God It's Friday",
+    "subtitle": "Your Personal AI Assistant",
+    "description": "A Go-based multi-agent framework that routes messages from your favorite chat apps to LLM-powered agents. Open source, self-hosted, fully extensible.",
+    "getStarted": "Get Started",
+    "viewOnGithub": "View on GitHub"
+  },
+  "features": {
+    "sectionTitle": "What Friday Does",
+    "multiChannel": {
+      "title": "Multi-Channel",
+      "description": "Connect Telegram, Lark, or HTTP API — route messages from any chat platform to your agents."
+    },
+    "multiLLM": {
+      "title": "Multi-LLM + Fallback",
+      "description": "OpenAI, Anthropic, Gemini, Ollama, Qwen — switch models freely with automatic fallback."
+    },
+    "singleBinary": {
+      "title": "Single Binary",
+      "description": "One binary, runs anywhere. Cross-compile for Linux, macOS, and Windows with ease."
+    },
+    "sandbox": {
+      "title": "Sandbox Security",
+      "description": "Tool calls execute in an isolated sandbox, protecting your system environment."
+    },
+    "skills": {
+      "title": "Skills System",
+      "description": "Extensible behavior plugins in YAML + Markdown. Build your own or use community skills."
+    },
+    "easyDeploy": {
+      "title": "Easy Deploy",
+      "description": "Docker or Go install — get running in minutes, not hours."
+    }
+  },
+  "quickStart": {
+    "sectionTitle": "Quick Start",
+    "goTab": "Go Install",
+    "dockerTab": "Docker",
+    "goCode": "go install github.com/tgifai/friday@latest\nfriday serve -c config.yaml",
+    "dockerCode": "docker run -d \\\n  -v ./config.yaml:/app/config.yaml \\\n  tgifai/friday"
+  },
+  "integrations": {
+    "sectionTitle": "Integrations",
+    "channels": "Channels",
+    "providers": "LLM Providers"
+  },
+  "footer": {
+    "product": "Product",
+    "community": "Community",
+    "project": "Project",
+    "features": "Features",
+    "docs": "Docs",
+    "github": "GitHub",
+    "issues": "Issues",
+    "blog": "Blog",
+    "license": "License",
+    "builtBy": "Built by TGIF AI"
+  },
+  "language": {
+    "en": "EN",
+    "zh": "中文"
+  }
+}
