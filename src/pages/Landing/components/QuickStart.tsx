@@ -30,8 +30,8 @@ export default function QuickStart() {
   const { t } = useTranslation()
 
   return (
-    <Box as="section" id="quick-start" py="20">
-      <Container maxW="3xl">
+    <Box as="section" id="quick-start" py={{ base: '16', md: '24' }}>
+      <Container maxW="2xl" px={{ base: '4', md: '6' }}>
         <Heading as="h2" fontSize={{ base: '2xl', md: '3xl' }} fontWeight="bold" textAlign="center" mb="12">
           {t('quickStart.sectionTitle')}
         </Heading>

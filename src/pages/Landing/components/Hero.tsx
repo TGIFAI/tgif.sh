@@ -10,8 +10,8 @@ export default function Hero() {
   const { t } = useTranslation()
 
   return (
-    <Box as="section" pt="32" pb="20">
-      <Container maxW="4xl" textAlign="center">
+    <Box as="section" pt={{ base: '28', md: '36' }} pb={{ base: '16', md: '24' }}>
+      <Container maxW="3xl" px={{ base: '4', md: '6' }} textAlign="center">
         <Heading as="h1" fontSize={{ base: '4xl', md: '6xl' }} fontWeight="extrabold" lineHeight="tight">
           {t('hero.title')}
         </Heading>

@@ -8,8 +8,8 @@ export default function Integrations() {
   const { t } = useTranslation()
 
   return (
-    <Box as="section" id="integrations" py="20">
-      <Container maxW="4xl">
+    <Box as="section" id="integrations" py={{ base: '16', md: '24' }}>
+      <Container maxW="3xl" px={{ base: '4', md: '6' }}>
         <Heading as="h2" fontSize={{ base: '2xl', md: '3xl' }} fontWeight="bold" textAlign="center" mb="12">
           {t('integrations.sectionTitle')}
         </Heading>

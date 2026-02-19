@@ -30,7 +30,7 @@ export default function Footer() {
 
   return (
     <Box as="footer" borderTopWidth="1px" borderColor="border.muted">
-      <Container maxW="7xl" py="12">
+      <Container maxW="5xl" px={{ base: '4', md: '6' }} py={{ base: '10', md: '16' }}>
         <SimpleGrid columns={{ base: 1, sm: 3 }} gap="8">
           {columns.map((col) => (
             <Stack key={col.title} gap="3">

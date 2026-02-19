@@ -22,8 +22,8 @@ export default function Features() {
   const { t } = useTranslation()
 
   return (
-    <Box as="section" id="features" py="20">
-      <Container maxW="7xl">
+    <Box as="section" id="features" py={{ base: '16', md: '24' }}>
+      <Container maxW="5xl" px={{ base: '4', md: '6' }}>
         <Heading as="h2" fontSize={{ base: '2xl', md: '3xl' }} fontWeight="bold" textAlign="center" mb="12">
           {t('features.sectionTitle')}
         </Heading>

@@ -39,7 +39,7 @@ export default function Navbar() {
       borderColor="border.muted"
       transition="all 0.2s"
     >
-      <Container maxW="7xl" py="3">
+      <Container maxW="5xl" px={{ base: '4', md: '6' }} py="3">
         <Flex align="center" justify="space-between">
           <Text fontWeight="bold" fontSize="xl" cursor="pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             Friday
