@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "tgif-landing",
+  "compatibility_date": "2026-02-22",
+  "assets": {
+    "directory": "dist",
+    // All unknown routes serve index.html, letting React Router handle routing
+    "not_found_handling": "single-page-application"
+  }
+}
