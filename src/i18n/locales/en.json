@@ -2,7 +2,8 @@
   "nav": {
     "features": "Features",
     "quickStart": "Quick Start",
-    "github": "GitHub"
+    "github": "GitHub",
+    "pilot": "Config Pilot"
   },
   "hero": {
     "title": "Thank God It's Friday",
@@ -65,5 +66,103 @@
   "language": {
     "en": "EN",
     "zh": "中文"
+  },
+  "pilot": {
+    "title": "Config Pilot",
+    "subtitle": "Generate your Friday configuration step by step",
+    "steps": {
+      "general": "General",
+      "generalDesc": "Gateway & Logging",
+      "providers": "Providers",
+      "providersDesc": "LLM Access",
+      "channels": "Channels",
+      "channelsDesc": "Messaging",
+      "agents": "Agents",
+      "agentsDesc": "Agent Setup",
+      "review": "Done",
+      "reviewDesc": "Preview & Export"
+    },
+    "general": {
+      "title": "General Settings",
+      "description": "Set up the gateway server and logging behavior.",
+      "useDefaults": "Use Defaults",
+      "customize": "Customize",
+      "defaultsInfo": "Using recommended defaults",
+      "defaultsDetail": "Gateway binds to 0.0.0.0:8080 with plain-text logging to stdout. You can adjust these in the generated config file anytime.",
+      "gateway": "Gateway",
+      "bind": "Bind Address",
+      "requestTimeout": "Request Timeout (s)",
+      "maxSessions": "Max Concurrent Sessions",
+      "enableMetrics": "Enable Metrics",
+      "autoUpdate": "Auto Update",
+      "logging": "Logging",
+      "logLevel": "Log Level",
+      "logFormat": "Log Format",
+      "logOutput": "Output",
+      "logFile": "Log File Path",
+      "logMaxSize": "Max Size (MB)",
+      "logMaxBackups": "Max Backups",
+      "logMaxAge": "Max Age (days)"
+    },
+    "providers": {
+      "title": "LLM Providers",
+      "description": "Add at least one LLM provider. API keys support env-var syntax, e.g. ${OPENAI_API_KEY}.",
+      "providerLabel": "Provider",
+      "id": "Provider ID",
+      "type": "Type",
+      "empty": "No providers yet — click below to add one."
+    },
+    "channels": {
+      "title": "Channels",
+      "description": "Add at least one channel for sending and receiving messages.",
+      "channelLabel": "Channel",
+      "id": "Channel ID",
+      "type": "Type",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "empty": "No channels yet — click below to add one.",
+      "security": "Security",
+      "securityPolicy": "Policy",
+      "welcomeWindow": "Welcome Window (s)",
+      "maxResp": "Max Responses",
+      "customText": "Custom Text"
+    },
+    "agents": {
+      "title": "AI Agents",
+      "description": "Add at least one agent to connect providers with channels.",
+      "agentLabel": "Agent",
+      "empty": "No agents yet — click below to add one.",
+      "id": "Agent ID",
+      "name": "Name",
+      "workspace": "Workspace",
+      "primaryModel": "Primary Model",
+      "selectModel": "-- Select a model --",
+      "fallbackModels": "Fallback Models",
+      "fallbackHint": "Comma-separated, e.g. provider:model, provider:model",
+      "channels": "Channels",
+      "runtimeConfig": "Runtime Config",
+      "maxIterations": "Max Iterations",
+      "maxTokens": "Max Tokens",
+      "temperature": "Temperature"
+    },
+    "review": {
+      "title": "Preview",
+      "description": "Review your configuration, then copy or download."
+    },
+    "actions": {
+      "next": "Next",
+      "previous": "Previous",
+      "addProvider": "Add Provider",
+      "addChannel": "Add Channel",
+      "addAgent": "Add Agent",
+      "remove": "Remove",
+      "copy": "Copy",
+      "download": "Download YAML"
+    },
+    "validation": {
+      "required": "This field is required",
+      "minOne": "At least one item is required",
+      "uniqueId": "IDs must be unique"
+    }
   }
 }

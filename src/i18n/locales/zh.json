@@ -2,7 +2,8 @@
   "nav": {
     "features": "功能",
     "quickStart": "快速开始",
-    "github": "GitHub"
+    "github": "GitHub",
+    "pilot": "配置向导"
   },
   "hero": {
     "title": "Thank God It's Friday",
@@ -65,5 +66,103 @@
   "language": {
     "en": "EN",
     "zh": "中文"
+  },
+  "pilot": {
+    "title": "配置向导",
+    "subtitle": "逐步生成你的 Friday 配置",
+    "steps": {
+      "general": "通用",
+      "generalDesc": "网关与日志",
+      "providers": "提供商",
+      "providersDesc": "LLM 接入",
+      "channels": "渠道",
+      "channelsDesc": "消息通道",
+      "agents": "智能体",
+      "agentsDesc": "Agent 配置",
+      "review": "完成",
+      "reviewDesc": "预览与导出"
+    },
+    "general": {
+      "title": "通用设置",
+      "description": "设置网关服务和日志行为。",
+      "useDefaults": "使用默认值",
+      "customize": "自定义",
+      "defaultsInfo": "已选用推荐默认值",
+      "defaultsDetail": "网关绑定 0.0.0.0:8080，日志以纯文本格式输出到标准输出。这些选项可以在生成的配置文件中随时调整。",
+      "gateway": "网关",
+      "bind": "绑定地址",
+      "requestTimeout": "请求超时 (秒)",
+      "maxSessions": "最大并发会话数",
+      "enableMetrics": "启用指标采集",
+      "autoUpdate": "自动更新",
+      "logging": "日志",
+      "logLevel": "日志级别",
+      "logFormat": "日志格式",
+      "logOutput": "输出方式",
+      "logFile": "日志文件路径",
+      "logMaxSize": "单文件上限 (MB)",
+      "logMaxBackups": "保留备份数",
+      "logMaxAge": "保留天数"
+    },
+    "providers": {
+      "title": "LLM 提供商",
+      "description": "至少添加一个 LLM 提供商。API 密钥支持环境变量写法，如 ${OPENAI_API_KEY}。",
+      "providerLabel": "提供商",
+      "id": "提供商 ID",
+      "type": "类型",
+      "empty": "尚未添加提供商，点击下方按钮开始。"
+    },
+    "channels": {
+      "title": "消息渠道",
+      "description": "至少添加一个渠道，用于接收和发送消息。",
+      "channelLabel": "渠道",
+      "id": "渠道 ID",
+      "type": "类型",
+      "enabled": "启用",
+      "disabled": "已禁用",
+      "empty": "尚未添加渠道，点击下方按钮开始。",
+      "security": "安全策略",
+      "securityPolicy": "策略",
+      "welcomeWindow": "欢迎窗口 (秒)",
+      "maxResp": "最大响应数",
+      "customText": "自定义文本"
+    },
+    "agents": {
+      "title": "AI 智能体",
+      "description": "至少添加一个智能体，将提供商与渠道关联起来。",
+      "agentLabel": "智能体",
+      "empty": "尚未添加智能体，点击下方按钮开始。",
+      "id": "智能体 ID",
+      "name": "名称",
+      "workspace": "工作空间",
+      "primaryModel": "主模型",
+      "selectModel": "-- 选择模型 --",
+      "fallbackModels": "回退模型",
+      "fallbackHint": "逗号分隔，如 provider:model, provider:model",
+      "channels": "关联渠道",
+      "runtimeConfig": "运行时参数",
+      "maxIterations": "最大迭代次数",
+      "maxTokens": "最大 Token 数",
+      "temperature": "温度"
+    },
+    "review": {
+      "title": "预览配置",
+      "description": "确认无误后，复制或下载配置文件。"
+    },
+    "actions": {
+      "next": "下一步",
+      "previous": "上一步",
+      "addProvider": "添加提供商",
+      "addChannel": "添加渠道",
+      "addAgent": "添加智能体",
+      "remove": "删除",
+      "copy": "复制",
+      "download": "下载 YAML"
+    },
+    "validation": {
+      "required": "此字段为必填",
+      "minOne": "至少需要一项",
+      "uniqueId": "ID 不能重复"
+    }
   }
 }

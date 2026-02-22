@@ -1,6 +1,7 @@
 import { Box, Container, Flex, HStack, IconButton, Link, Text } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link as RouterLink, useLocation } from 'react-router-dom'
 import { LuMenu, LuX } from 'react-icons/lu'
 import { ColorModeButton } from '@/components/ui/color-mode'
 import LanguageSwitcher from '@/components/LanguageSwitcher'
@@ -11,6 +12,8 @@ function scrollTo(id: string) {
 
 export default function Navbar() {
   const { t } = useTranslation()
+  const location = useLocation()
+  const isLanding = location.pathname === '/'
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -47,11 +50,14 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <HStack gap="6" display={{ base: 'none', md: 'flex' }}>
-            {navLinks.map((link) => (
+            {isLanding && navLinks.map((link) => (
               <Link key={link.id} variant="plain" cursor="pointer" fontSize="sm" fontWeight="medium" onClick={() => scrollTo(link.id)}>
                 {link.label}
               </Link>
             ))}
+            <Link asChild fontSize="sm" fontWeight="medium" variant="plain">
+              <RouterLink to="/pilot">{t('nav.pilot')}</RouterLink>
+            </Link>
             <Link variant="plain" href="https://github.com/tgifai/friday" target="_blank" fontSize="sm" fontWeight="medium">
               {t('nav.github')}
             </Link>
@@ -75,11 +81,14 @@ export default function Navbar() {
         {/* Mobile menu */}
         {mobileOpen && (
           <Flex direction="column" gap="4" py="4" display={{ md: 'none' }}>
-            {navLinks.map((link) => (
+            {isLanding && navLinks.map((link) => (
               <Link key={link.id} variant="plain" cursor="pointer" fontSize="sm" onClick={() => { scrollTo(link.id); setMobileOpen(false) }}>
                 {link.label}
               </Link>
             ))}
+            <Link asChild fontSize="sm" variant="plain" onClick={() => setMobileOpen(false)}>
+              <RouterLink to="/pilot">{t('nav.pilot')}</RouterLink>
+            </Link>
             <Link variant="plain" href="https://github.com/tgifai/friday" target="_blank" fontSize="sm">
               {t('nav.github')}
             </Link>
