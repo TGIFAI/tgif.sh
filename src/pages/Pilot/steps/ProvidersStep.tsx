@@ -49,10 +49,9 @@ const ProviderCard = observer(function ProviderCard({ index }: { index: number }
       borderColor="border.muted"
       borderRadius="xl"
       overflow="hidden"
-      transition="all 0.15s"
-      _hover={{ borderColor: 'border.emphasized' }}
+      transition="all 0.2s"
+      _hover={{ borderColor: 'green.500/30' }}
     >
-      {/* Card header bar */}
       <Flex
         px={{ base: '4', md: '6' }}
         py="3"
@@ -85,7 +84,6 @@ const ProviderCard = observer(function ProviderCard({ index }: { index: number }
         </IconButton>
       </Flex>
 
-      {/* Card body */}
       <Box px={{ base: '4', md: '6' }} py="5">
         <SimpleGrid columns={{ base: 1, md: 2 }} gap="5">
           <Field label={t('pilot.providers.id')}>
@@ -179,8 +177,8 @@ const ProvidersStep = observer(function ProvidersStep() {
         borderRadius="xl"
         py="4"
         cursor="pointer"
-        transition="all 0.15s"
-        _hover={{ borderColor: 'border.emphasized', bg: 'bg.muted' }}
+        transition="all 0.2s"
+        _hover={{ borderColor: 'green.500/40', bg: { base: 'green.50/50', _dark: 'green.500/5' } }}
         onClick={() => store.addProvider()}
         display="flex"
         alignItems="center"

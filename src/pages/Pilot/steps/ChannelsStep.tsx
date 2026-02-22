@@ -49,10 +49,9 @@ const ChannelCard = observer(function ChannelCard({ index }: { index: number }) 
       borderColor="border.muted"
       borderRadius="xl"
       overflow="hidden"
-      transition="all 0.15s"
-      _hover={{ borderColor: 'border.emphasized' }}
+      transition="all 0.2s"
+      _hover={{ borderColor: 'green.500/30' }}
     >
-      {/* Card header bar */}
       <Flex
         px={{ base: '4', md: '6' }}
         py="3"
@@ -90,7 +89,6 @@ const ChannelCard = observer(function ChannelCard({ index }: { index: number }) 
         </IconButton>
       </Flex>
 
-      {/* Card body */}
       <Box px={{ base: '4', md: '6' }} py="5">
         <SimpleGrid columns={{ base: 1, md: 2 }} gap="5">
           <Field label={t('pilot.channels.id')}>
@@ -164,7 +162,6 @@ const ChannelCard = observer(function ChannelCard({ index }: { index: number }) 
           </Box>
         </SimpleGrid>
 
-        {/* Security Config */}
         <Box mt="5" borderTopWidth="1px" borderColor="border.muted" pt="4">
           <Accordion.Root collapsible>
             <AccordionItem value="security">
@@ -282,8 +279,8 @@ const ChannelsStep = observer(function ChannelsStep() {
         borderRadius="xl"
         py="4"
         cursor="pointer"
-        transition="all 0.15s"
-        _hover={{ borderColor: 'border.emphasized', bg: 'bg.muted' }}
+        transition="all 0.2s"
+        _hover={{ borderColor: 'green.500/40', bg: { base: 'green.50/50', _dark: 'green.500/5' } }}
         onClick={() => store.addChannel()}
         display="flex"
         alignItems="center"

@@ -43,8 +43,8 @@
     "sectionTitle": "快速开始",
     "goTab": "Go 安装",
     "dockerTab": "Docker",
-    "goCode": "go install github.com/tgifai/friday@latest\nfriday serve -c config.yaml",
-    "dockerCode": "docker run -d \\\n  -v ./config.yaml:/app/config.yaml \\\n  tgifai/friday"
+    "goCode": "go install github.com/tgifai/friday@latest\nfriday gateway run",
+    "dockerCode": "docker run -d \\\n  -v ./config.yaml:/app/config.yaml \\\n  tgifai/friday gateway run"
   },
   "integrations": {
     "sectionTitle": "集成",

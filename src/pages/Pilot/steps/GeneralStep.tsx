@@ -41,7 +41,7 @@ const GeneralStep = observer(function GeneralStep() {
             <RadioCard.ItemHiddenInput />
             <RadioCard.ItemControl>
               <HStack gap="4" align="center" width="full">
-                <Icon fontSize="xl" flexShrink={0}><LuZap /></Icon>
+                <Icon fontSize="xl" flexShrink={0} color="green.500"><LuZap /></Icon>
                 <Box>
                   <RadioCard.ItemText fontWeight="medium">{t('pilot.general.useDefaults')}</RadioCard.ItemText>
                   <RadioCard.ItemDescription>{t('pilot.general.defaultsCardDesc')}</RadioCard.ItemDescription>
@@ -53,7 +53,7 @@ const GeneralStep = observer(function GeneralStep() {
             <RadioCard.ItemHiddenInput />
             <RadioCard.ItemControl>
               <HStack gap="4" align="center" width="full">
-                <Icon fontSize="xl" flexShrink={0}><LuSlidersHorizontal /></Icon>
+                <Icon fontSize="xl" flexShrink={0} color="fg.muted"><LuSlidersHorizontal /></Icon>
                 <Box>
                   <RadioCard.ItemText fontWeight="medium">{t('pilot.general.customize')}</RadioCard.ItemText>
                   <RadioCard.ItemDescription>{t('pilot.general.customizeCardDesc')}</RadioCard.ItemDescription>
@@ -81,7 +81,7 @@ const GeneralStep = observer(function GeneralStep() {
           {/* Gateway */}
           <Box>
             <HStack gap="2" mb="4">
-              <Icon color="fg.muted" fontSize="lg"><LuServer /></Icon>
+              <Icon color="green.500" fontSize="lg"><LuServer /></Icon>
               <Heading size="md" fontWeight="semibold">{t('pilot.general.gateway')}</Heading>
             </HStack>
             <Box
@@ -144,7 +144,7 @@ const GeneralStep = observer(function GeneralStep() {
           {/* Logging */}
           <Box>
             <HStack gap="2" mb="4">
-              <Icon color="fg.muted" fontSize="lg"><LuScrollText /></Icon>
+              <Icon color="green.500" fontSize="lg"><LuScrollText /></Icon>
               <Heading size="md" fontWeight="semibold">{t('pilot.general.logging')}</Heading>
             </HStack>
             <Box

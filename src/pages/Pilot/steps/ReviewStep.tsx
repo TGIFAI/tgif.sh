@@ -3,11 +3,11 @@ import { useTranslation } from 'react-i18next'
 import { useCallback } from 'react'
 import {
   Box,
+  Flex,
   Heading,
+  HStack,
   Text,
   VStack,
-  HStack,
-  Code,
   Button,
 } from '@chakra-ui/react'
 import { LuDownload, LuCopy } from 'react-icons/lu'
@@ -35,20 +35,53 @@ const ReviewStep = observer(function ReviewStep() {
         <Text color="fg.muted" mt="1" fontSize="sm">{t('pilot.review.description')}</Text>
       </Box>
 
-      <Code
-        display="block"
-        whiteSpace="pre"
-        p="5"
-        rounded="lg"
-        fontSize="sm"
-        overflowX="auto"
-        maxH="600px"
-        overflowY="auto"
-        bg={{ base: 'gray.100', _dark: 'gray.900' }}
-        lineHeight="tall"
+      {/* Terminal-style YAML preview */}
+      <Box
+        borderRadius="xl"
+        overflow="hidden"
+        borderWidth="1px"
+        borderColor={{ base: 'gray.200', _dark: 'gray.800' }}
       >
-        {store.yamlOutput}
-      </Code>
+        <Flex
+          px="4"
+          py="2.5"
+          bg={{ base: 'gray.100', _dark: 'gray.900' }}
+          align="center"
+          borderBottomWidth="1px"
+          borderColor={{ base: 'gray.200', _dark: 'gray.800' }}
+        >
+          <HStack gap="2">
+            <Box w="2.5" h="2.5" borderRadius="full" bg="red.400" />
+            <Box w="2.5" h="2.5" borderRadius="full" bg="yellow.400" />
+            <Box w="2.5" h="2.5" borderRadius="full" bg="green.400" />
+          </HStack>
+          <Text
+            flex="1"
+            textAlign="center"
+            fontSize="xs"
+            fontFamily="'JetBrains Mono', monospace"
+            color={{ base: 'gray.500', _dark: 'gray.600' }}
+          >
+            config.yaml
+          </Text>
+          <Box w="12" />
+        </Flex>
+        <Box
+          px={{ base: '4', md: '6' }}
+          py="5"
+          bg={{ base: 'gray.950', _dark: 'gray.950' }}
+          fontFamily="'JetBrains Mono', monospace"
+          fontSize={{ base: 'xs', md: 'sm' }}
+          lineHeight="tall"
+          overflowX="auto"
+          maxH="600px"
+          overflowY="auto"
+          whiteSpace="pre"
+          color="gray.400"
+        >
+          {store.yamlOutput}
+        </Box>
+      </Box>
 
       <HStack gap="3">
         <ClipboardRoot value={store.yamlOutput}>

@@ -34,10 +34,9 @@ const AgentCard = observer(function AgentCard({ index }: { index: number }) {
       borderColor="border.muted"
       borderRadius="xl"
       overflow="hidden"
-      transition="all 0.15s"
-      _hover={{ borderColor: 'border.emphasized' }}
+      transition="all 0.2s"
+      _hover={{ borderColor: 'green.500/30' }}
     >
-      {/* Card header bar */}
       <Flex
         px={{ base: '4', md: '6' }}
         py="3"
@@ -69,7 +68,6 @@ const AgentCard = observer(function AgentCard({ index }: { index: number }) {
         </IconButton>
       </Flex>
 
-      {/* Card body */}
       <Box px={{ base: '4', md: '6' }} py="5">
         <SimpleGrid columns={{ base: 1, md: 2 }} gap="5">
           <Field label={t('pilot.agents.id')}>
@@ -132,7 +130,7 @@ const AgentCard = observer(function AgentCard({ index }: { index: number }) {
         {channelOptions.length > 0 && (
           <Box mt="5" pt="5" borderTopWidth="1px" borderColor="border.muted">
             <Flex align="center" gap="2" mb="3">
-              <Icon color="fg.muted" fontSize="sm"><LuMessageSquare /></Icon>
+              <Icon color="green.500" fontSize="sm"><LuMessageSquare /></Icon>
               <Text fontWeight="medium" fontSize="sm">{t('pilot.agents.channels')}</Text>
             </Flex>
             <Flex gap="4" wrap="wrap">
@@ -157,7 +155,7 @@ const AgentCard = observer(function AgentCard({ index }: { index: number }) {
         {/* Runtime Config */}
         <Box mt="5" pt="5" borderTopWidth="1px" borderColor="border.muted">
           <Flex align="center" gap="2" mb="3">
-            <Icon color="fg.muted" fontSize="sm"><LuCpu /></Icon>
+            <Icon color="green.500" fontSize="sm"><LuCpu /></Icon>
             <Text fontWeight="medium" fontSize="sm">{t('pilot.agents.runtimeConfig')}</Text>
           </Flex>
           <SimpleGrid columns={{ base: 1, md: 3 }} gap="5">
@@ -246,8 +244,8 @@ const AgentsStep = observer(function AgentsStep() {
         borderRadius="xl"
         py="4"
         cursor="pointer"
-        transition="all 0.15s"
-        _hover={{ borderColor: 'border.emphasized', bg: 'bg.muted' }}
+        transition="all 0.2s"
+        _hover={{ borderColor: 'green.500/40', bg: { base: 'green.50/50', _dark: 'green.500/5' } }}
         onClick={() => store.addAgent()}
         display="flex"
         alignItems="center"

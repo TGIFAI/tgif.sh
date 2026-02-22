@@ -11,7 +11,7 @@ export const DEFAULT_GATEWAY: GatewayConfig = {
 export const DEFAULT_LOGGING: LoggingConfig = {
   level: 'info',
   format: 'text',
-  output: 'stdout',
+  output: 'both',
   file: 'logs/friday.log',
   max_size: 100,
   max_backups: 5,

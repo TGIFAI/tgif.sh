@@ -1,4 +1,4 @@
-import { Box, Card, Container, Heading, Icon, SimpleGrid, Text } from '@chakra-ui/react'
+import { Box, Container, Heading, Icon, SimpleGrid, Text } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
 import { LuMessageSquare, LuBrain, LuPackage, LuShield, LuPuzzle, LuRocket } from 'react-icons/lu'
 import type { IconType } from 'react-icons'
@@ -23,25 +23,54 @@ export default function Features() {
 
   return (
     <Box as="section" id="features" py={{ base: '16', md: '24' }}>
-      <Container maxW="5xl" px={{ base: '4', md: '6' }}>
-        <Heading as="h2" fontSize={{ base: '2xl', md: '3xl' }} fontWeight="bold" textAlign="center" mb="12">
+      <Container maxW="6xl" px={{ base: '4', md: '6' }}>
+        <Heading
+          as="h2"
+          fontSize={{ base: '2xl', md: '4xl' }}
+          fontWeight="700"
+          textAlign="center"
+          mb={{ base: '10', md: '14' }}
+          letterSpacing="-0.02em"
+        >
           {t('features.sectionTitle')}
         </Heading>
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap="6">
-          {features.map((f) => (
-            <Card.Root key={f.titleKey} variant="outline">
-              <Card.Body gap="3">
-                <Icon fontSize="2xl" color="fg.muted">
-                  <f.icon />
-                </Icon>
-                <Heading as="h3" fontSize="lg" fontWeight="semibold">
-                  {t(f.titleKey)}
-                </Heading>
-                <Text fontSize="sm" color="fg.muted">
-                  {t(f.descKey)}
-                </Text>
-              </Card.Body>
-            </Card.Root>
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap="5">
+          {features.map((f, i) => (
+            <Box
+              key={f.titleKey}
+              p="6"
+              borderWidth="1px"
+              borderColor="border.muted"
+              borderRadius="xl"
+              transition="all 0.2s ease"
+              cursor="default"
+              _hover={{
+                borderColor: 'green.500/40',
+                transform: 'translateY(-2px)',
+                shadow: '0 8px 24px -8px rgba(16, 185, 129, 0.12)',
+              }}
+              style={{ animation: 'fadeInUp 0.5s ease-out both', animationDelay: `${i * 0.08}s` }}
+            >
+              <Box
+                w="10"
+                h="10"
+                borderRadius="lg"
+                bg={{ base: 'green.50', _dark: 'green.500/10' }}
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                color="green.500"
+                mb="4"
+              >
+                <Icon fontSize="lg"><f.icon /></Icon>
+              </Box>
+              <Heading as="h3" fontSize="md" fontWeight="600" mb="2">
+                {t(f.titleKey)}
+              </Heading>
+              <Text fontSize="sm" color="fg.muted" lineHeight="relaxed">
+                {t(f.descKey)}
+              </Text>
+            </Box>
           ))}
         </SimpleGrid>
       </Container>

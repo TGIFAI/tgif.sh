@@ -30,11 +30,13 @@ export default function Footer() {
 
   return (
     <Box as="footer" borderTopWidth="1px" borderColor="border.muted">
-      <Container maxW="5xl" px={{ base: '4', md: '6' }} py={{ base: '10', md: '16' }}>
+      <Container maxW="6xl" px={{ base: '4', md: '6' }} py={{ base: '10', md: '16' }}>
         <SimpleGrid columns={{ base: 1, sm: 3 }} gap="8">
           {columns.map((col) => (
             <Stack key={col.title} gap="3">
-              <Text fontWeight="semibold" fontSize="sm">{col.title}</Text>
+              <Text fontWeight="semibold" fontSize="sm" letterSpacing="0.02em">
+                {col.title}
+              </Text>
               {col.links.map((link) => (
                 <Link
                   key={link.label}
@@ -43,6 +45,8 @@ export default function Footer() {
                   variant="plain"
                   fontSize="sm"
                   color="fg.muted"
+                  _hover={{ color: 'green.500' }}
+                  transition="color 0.2s"
                 >
                   {link.label}
                 </Link>
@@ -57,8 +61,8 @@ export default function Footer() {
           borderColor="border.muted"
           justify="center"
         >
-          <Text fontSize="sm" color="fg.muted">
-            © {new Date().getFullYear()} {t('footer.builtBy')}
+          <Text fontSize="xs" color="fg.muted">
+            &copy; {new Date().getFullYear()} {t('footer.builtBy')}
           </Text>
         </Flex>
       </Container>

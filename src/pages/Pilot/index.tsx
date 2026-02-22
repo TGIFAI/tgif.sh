@@ -126,7 +126,7 @@ const PilotWizard = observer(function PilotWizard() {
         </Box>
         <Box>
           {store.currentStep < 4 && (
-            <Button size="lg" onClick={handleNext}>
+            <Button colorPalette="green" size="lg" onClick={handleNext}>
               {t('pilot.actions.next')}
               <LuArrowRight />
             </Button>
@@ -150,17 +150,32 @@ export default function Pilot() {
       <Box minH="100vh">
         <Navbar />
         {/* Hero header */}
-        <Box pt={{ base: '24', md: '32' }} pb={{ base: '8', md: '12' }} textAlign="center">
+        <Box
+          pt={{ base: '28', md: '36' }}
+          pb={{ base: '8', md: '12' }}
+          textAlign="center"
+        >
           <Container maxW="3xl">
             <Heading
               as="h1"
-              fontSize={{ base: '3xl', md: '5xl' }}
-              fontWeight="extrabold"
+              fontFamily="'Instrument Serif', serif"
+              fontStyle="italic"
+              fontSize={{ base: '4xl', md: '6xl' }}
+              fontWeight="normal"
               lineHeight="tight"
+              letterSpacing="-0.02em"
+              style={{ animation: 'fadeInUp 0.7s ease-out both' }}
             >
               {t('pilot.title')}
             </Heading>
-            <Text mt="3" fontSize={{ base: 'md', md: 'lg' }} color="fg.muted" maxW="xl" mx="auto">
+            <Text
+              mt="3"
+              fontSize={{ base: 'md', md: 'lg' }}
+              color="fg.muted"
+              maxW="xl"
+              mx="auto"
+              style={{ animation: 'fadeInUp 0.7s ease-out both', animationDelay: '0.1s' }}
+            >
               {t('pilot.subtitle')}
             </Text>
           </Container>
