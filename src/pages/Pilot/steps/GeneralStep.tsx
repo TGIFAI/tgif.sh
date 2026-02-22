@@ -9,10 +9,11 @@ import {
   Input,
   HStack,
   Icon,
+  RadioCard,
 } from '@chakra-ui/react'
-import { LuServer, LuScrollText, LuCircleCheck } from 'react-icons/lu'
+import { LuServer, LuScrollText, LuZap, LuSlidersHorizontal } from 'react-icons/lu'
 import { Field } from '@/components/ui/field'
-import { SegmentedControl } from '@/components/ui/segmented-control'
+import { RadioCardRoot } from '@/components/ui/radio-card'
 import { NativeSelectField, NativeSelectRoot } from '@/components/ui/native-select'
 import { NumberInputRoot, NumberInputField } from '@/components/ui/number-input'
 import { Switch } from '@/components/ui/switch'
@@ -24,35 +25,53 @@ const GeneralStep = observer(function GeneralStep() {
 
   return (
     <VStack align="stretch" gap="8">
-      <Box>
+      <Box textAlign="center">
         <Heading size="lg" fontWeight="bold">{t('pilot.general.title')}</Heading>
         <Text color="fg.muted" mt="1" fontSize="sm">{t('pilot.general.description')}</Text>
       </Box>
 
-      <SegmentedControl
+      <RadioCardRoot
         value={store.useDefaultGeneral ? 'defaults' : 'customize'}
         onValueChange={({ value }) =>
           store.setUseDefaultGeneral(value === 'defaults')
         }
-        items={[
-          { value: 'defaults', label: t('pilot.general.useDefaults') },
-          { value: 'customize', label: t('pilot.general.customize') },
-        ]}
-        size="lg"
-      />
+      >
+        <SimpleGrid columns={2} gap="4">
+          <RadioCard.Item value="defaults" cursor="pointer">
+            <RadioCard.ItemHiddenInput />
+            <RadioCard.ItemControl>
+              <HStack gap="4" align="center" width="full">
+                <Icon fontSize="xl" flexShrink={0}><LuZap /></Icon>
+                <Box>
+                  <RadioCard.ItemText fontWeight="medium">{t('pilot.general.useDefaults')}</RadioCard.ItemText>
+                  <RadioCard.ItemDescription>{t('pilot.general.defaultsCardDesc')}</RadioCard.ItemDescription>
+                </Box>
+              </HStack>
+            </RadioCard.ItemControl>
+          </RadioCard.Item>
+          <RadioCard.Item value="customize" cursor="pointer">
+            <RadioCard.ItemHiddenInput />
+            <RadioCard.ItemControl>
+              <HStack gap="4" align="center" width="full">
+                <Icon fontSize="xl" flexShrink={0}><LuSlidersHorizontal /></Icon>
+                <Box>
+                  <RadioCard.ItemText fontWeight="medium">{t('pilot.general.customize')}</RadioCard.ItemText>
+                  <RadioCard.ItemDescription>{t('pilot.general.customizeCardDesc')}</RadioCard.ItemDescription>
+                </Box>
+              </HStack>
+            </RadioCard.ItemControl>
+          </RadioCard.Item>
+        </SimpleGrid>
+      </RadioCardRoot>
 
       {store.useDefaultGeneral ? (
         <Box
           borderWidth="1px"
           borderColor="border.muted"
           borderRadius="xl"
-          p="6"
+          p="5"
           bg={{ base: 'bg.muted', _dark: 'bg.muted' }}
         >
-          <HStack gap="3" mb="3">
-            <Icon color="green.fg" fontSize="xl"><LuCircleCheck /></Icon>
-            <Text fontWeight="semibold">{t('pilot.general.defaultsInfo')}</Text>
-          </HStack>
           <Text fontSize="sm" color="fg.muted" lineHeight="tall">
             {t('pilot.general.defaultsDetail')}
           </Text>
@@ -76,7 +95,7 @@ const GeneralStep = observer(function GeneralStep() {
                   <Input
                     value={store.gateway.bind}
                     onChange={(e) => store.updateGateway({ bind: e.target.value })}
-                    placeholder="0.0.0.0:8080"
+                    placeholder="0.0.0.0:8088"
                   />
                 </Field>
                 <Field label={t('pilot.general.requestTimeout')}>

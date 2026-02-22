@@ -1,7 +1,7 @@
 import type { GatewayConfig, LoggingConfig } from './types'
 
 export const DEFAULT_GATEWAY: GatewayConfig = {
-  bind: '0.0.0.0:8080',
+  bind: '0.0.0.0:8088',
   max_concurrent_sessions: 100,
   request_timeout: 300,
   enable_metrics: false,
@@ -31,14 +31,14 @@ export const PROVIDER_FIELDS: Record<string, ProviderFieldDef[]> = {
   openai: [
     { key: 'api_key', label: 'API Key', type: 'string', required: true, placeholder: '${OPENAI_API_KEY}', defaultValue: '' },
     { key: 'base_url', label: 'Base URL', type: 'string', placeholder: 'https://api.openai.com/v1', defaultValue: 'https://api.openai.com/v1' },
-    { key: 'default_model', label: 'Default Model', type: 'string', placeholder: 'gpt-4o-mini', defaultValue: 'gpt-4o-mini' },
+    { key: 'default_model', label: 'Default Model', type: 'string', placeholder: 'gpt-5-mini', defaultValue: 'gpt-5-mini' },
     { key: 'timeout', label: 'Timeout (s)', type: 'number', defaultValue: 60 },
     { key: 'max_retries', label: 'Max Retries', type: 'number', defaultValue: 3 },
   ],
   anthropic: [
     { key: 'api_key', label: 'API Key', type: 'string', required: true, placeholder: '${ANTHROPIC_API_KEY}', defaultValue: '' },
     { key: 'base_url', label: 'Base URL', type: 'string', placeholder: 'https://api.anthropic.com', defaultValue: 'https://api.anthropic.com' },
-    { key: 'default_model', label: 'Default Model', type: 'string', placeholder: 'claude-sonnet-4-20250514', defaultValue: 'claude-sonnet-4-20250514' },
+    { key: 'default_model', label: 'Default Model', type: 'string', placeholder: 'claude-sonnet-4-5-20250929', defaultValue: 'claude-sonnet-4-5-20250929' },
     { key: 'max_tokens', label: 'Max Tokens', type: 'number', defaultValue: 4096 },
     { key: 'timeout', label: 'Timeout (s)', type: 'number', defaultValue: 60 },
     { key: 'max_retries', label: 'Max Retries', type: 'number', defaultValue: 3 },
@@ -46,7 +46,7 @@ export const PROVIDER_FIELDS: Record<string, ProviderFieldDef[]> = {
   gemini: [
     { key: 'api_key', label: 'API Key', type: 'string', required: true, placeholder: '${GEMINI_API_KEY}', defaultValue: '' },
     { key: 'base_url', label: 'Base URL', type: 'string', placeholder: 'https://generativelanguage.googleapis.com', defaultValue: '' },
-    { key: 'default_model', label: 'Default Model', type: 'string', placeholder: 'gemini-2.0-flash', defaultValue: 'gemini-2.0-flash' },
+    { key: 'default_model', label: 'Default Model', type: 'string', placeholder: 'gemini-3-flash-preview', defaultValue: 'gemini-3-flash-preview' },
     { key: 'timeout', label: 'Timeout (s)', type: 'number', defaultValue: 60 },
     { key: 'max_retries', label: 'Max Retries', type: 'number', defaultValue: 3 },
   ],

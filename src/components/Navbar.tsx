@@ -1,4 +1,4 @@
-import { Box, Container, Flex, HStack, IconButton, Link, Text } from '@chakra-ui/react'
+import { Box, Container, Flex, HStack, IconButton, Link } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link as RouterLink, useLocation } from 'react-router-dom'
@@ -44,9 +44,9 @@ export default function Navbar() {
     >
       <Container maxW="5xl" px={{ base: '4', md: '6' }} py="3">
         <Flex align="center" justify="space-between">
-          <Text fontWeight="bold" fontSize="xl" cursor="pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            Friday
-          </Text>
+          <Link asChild fontWeight="bold" fontSize="xl" variant="plain" _hover={{ textDecoration: 'none' }}>
+            <RouterLink to="/">Friday</RouterLink>
+          </Link>
 
           {/* Desktop nav */}
           <HStack gap="6" display={{ base: 'none', md: 'flex' }}>
