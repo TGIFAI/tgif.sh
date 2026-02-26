@@ -11,6 +11,7 @@ import {
   DEFAULT_LOGGING,
   DEFAULT_CHANNEL_SECURITY,
   DEFAULT_AGENT_RUNTIME,
+  DEFAULT_AGENT_SESSION,
   buildDefaultProviderConfig,
   buildDefaultChannelConfig,
 } from './defaults'
@@ -167,6 +168,7 @@ export class PilotStore {
       channels: [],
       models: { primary: '', fallback: [] },
       config: { ...DEFAULT_AGENT_RUNTIME },
+      session: { ...DEFAULT_AGENT_SESSION },
     })
   }
 
@@ -183,5 +185,6 @@ export class PilotStore {
     if (partial.channels !== undefined) agent.channels = partial.channels
     if (partial.models) Object.assign(agent.models, partial.models)
     if (partial.config) Object.assign(agent.config, partial.config)
+    if (partial.session) Object.assign(agent.session, partial.session)
   }
 }

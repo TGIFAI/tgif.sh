@@ -1,5 +1,6 @@
 import yaml from 'js-yaml'
 import type { PilotStore } from './store/PilotStore'
+import type { AgentSessionConfig } from './store/types'
 import { DEFAULT_GATEWAY, DEFAULT_LOGGING } from './store/defaults'
 
 function cleanConfig(config: Record<string, string | number>): Record<string, string | number> {
@@ -9,6 +10,14 @@ function cleanConfig(config: Record<string, string | number>): Record<string, st
     result[key] = value
   }
   return result
+}
+
+function cleanSessionConfig(session: AgentSessionConfig): Record<string, string | number> | undefined {
+  const result: Record<string, string | number> = {}
+  if (session.ttl) result.ttl = session.ttl
+  if (session.consolidate_every > 0) result.consolidate_every = session.consolidate_every
+  if (session.flush_cooldown) result.flush_cooldown = session.flush_cooldown
+  return Object.keys(result).length > 0 ? result : undefined
 }
 
 export function generateYaml(store: PilotStore): string {
@@ -63,6 +72,7 @@ export function generateYaml(store: PilotStore): string {
             ...(a.models.fallback.length > 0 ? { fallback: a.models.fallback } : {}),
           },
           config: a.config,
+          session: cleanSessionConfig(a.session),
         },
       ])
     )

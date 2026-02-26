@@ -34,9 +34,9 @@
       "title": "Skills 扩展系统",
       "description": "基于 YAML + Markdown 的可扩展行为插件。构建你自己的或使用社区 Skills。"
     },
-    "easyDeploy": {
-      "title": "轻松部署",
-      "description": "Docker 或 Go install —— 几分钟内完成部署。"
+    "smartMemory": {
+      "title": "智能记忆",
+      "description": "双层记忆系统：每日日志 + 持久知识库。支持预压缩整理、阈值触发归纳和会话重置，保持上下文精准。"
     }
   },
   "quickStart": {
@@ -145,7 +145,14 @@
       "runtimeConfig": "运行时参数",
       "maxIterations": "最大迭代次数",
       "maxTokens": "最大 Token 数",
-      "temperature": "温度"
+      "temperature": "温度",
+      "sessionConfig": "会话与记忆",
+      "sessionTTL": "会话 TTL",
+      "sessionTTLHint": "无活动自动过期，如 24h、12h",
+      "consolidateEvery": "整理频率",
+      "consolidateEveryHint": "每 N 条消息触发记忆整理",
+      "flushCooldown": "整理冷却",
+      "flushCooldownHint": "两次整理之间的最小间隔，如 2h"
     },
     "review": {
       "title": "预览配置",

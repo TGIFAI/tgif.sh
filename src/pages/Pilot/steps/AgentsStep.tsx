@@ -12,7 +12,7 @@ import {
   Icon,
   Badge,
 } from '@chakra-ui/react'
-import { LuPlus, LuTrash2, LuBot, LuCpu, LuMessageSquare } from 'react-icons/lu'
+import { LuPlus, LuTrash2, LuBot, LuCpu, LuMessageSquare, LuDatabase } from 'react-icons/lu'
 import { Field } from '@/components/ui/field'
 import { NativeSelectField, NativeSelectRoot } from '@/components/ui/native-select'
 import { NumberInputRoot, NumberInputField } from '@/components/ui/number-input'
@@ -199,6 +199,51 @@ const AgentCard = observer(function AgentCard({ index }: { index: number }) {
               >
                 <NumberInputField />
               </NumberInputRoot>
+            </Field>
+          </SimpleGrid>
+        </Box>
+
+        {/* Session & Memory Config */}
+        <Box mt="5" pt="5" borderTopWidth="1px" borderColor="border.muted">
+          <Flex align="center" gap="2" mb="3">
+            <Icon color="green.500" fontSize="sm"><LuDatabase /></Icon>
+            <Text fontWeight="medium" fontSize="sm">{t('pilot.agents.sessionConfig')}</Text>
+          </Flex>
+          <SimpleGrid columns={{ base: 1, md: 3 }} gap="5">
+            <Field label={t('pilot.agents.sessionTTL')} helperText={t('pilot.agents.sessionTTLHint')}>
+              <Input
+                value={agent.session.ttl}
+                onChange={(e) =>
+                  store.updateAgent(index, {
+                    session: { ...agent.session, ttl: e.target.value },
+                  })
+                }
+                placeholder="24h"
+              />
+            </Field>
+            <Field label={t('pilot.agents.consolidateEvery')} helperText={t('pilot.agents.consolidateEveryHint')}>
+              <NumberInputRoot
+                min={0}
+                value={String(agent.session.consolidate_every)}
+                onValueChange={({ value }) =>
+                  store.updateAgent(index, {
+                    session: { ...agent.session, consolidate_every: Number(value) || 0 },
+                  })
+                }
+              >
+                <NumberInputField />
+              </NumberInputRoot>
+            </Field>
+            <Field label={t('pilot.agents.flushCooldown')} helperText={t('pilot.agents.flushCooldownHint')}>
+              <Input
+                value={agent.session.flush_cooldown}
+                onChange={(e) =>
+                  store.updateAgent(index, {
+                    session: { ...agent.session, flush_cooldown: e.target.value },
+                  })
+                }
+                placeholder="2h"
+              />
             </Field>
           </SimpleGrid>
         </Box>

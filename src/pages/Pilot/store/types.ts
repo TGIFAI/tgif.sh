@@ -48,6 +48,12 @@ export interface AgentRuntimeConfig {
   temperature: number
 }
 
+export interface AgentSessionConfig {
+  ttl: string
+  consolidate_every: number
+  flush_cooldown: string
+}
+
 export interface AgentEntry {
   id: string
   name: string
@@ -55,4 +61,5 @@ export interface AgentEntry {
   channels: string[]
   models: ModelsConfig
   config: AgentRuntimeConfig
+  session: AgentSessionConfig
 }

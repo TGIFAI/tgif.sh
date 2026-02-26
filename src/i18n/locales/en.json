@@ -34,9 +34,9 @@
       "title": "Skills System",
       "description": "Extensible behavior plugins in YAML + Markdown. Build your own or use community skills."
     },
-    "easyDeploy": {
-      "title": "Easy Deploy",
-      "description": "Docker or Go install — get running in minutes, not hours."
+    "smartMemory": {
+      "title": "Smart Memory",
+      "description": "Two-tier memory with daily logs and persistent knowledge. Pre-compaction flush, threshold-based consolidation, and session reset keep context sharp."
     }
   },
   "quickStart": {
@@ -145,7 +145,14 @@
       "runtimeConfig": "Runtime Config",
       "maxIterations": "Max Iterations",
       "maxTokens": "Max Tokens",
-      "temperature": "Temperature"
+      "temperature": "Temperature",
+      "sessionConfig": "Session & Memory",
+      "sessionTTL": "Session TTL",
+      "sessionTTLHint": "Auto-expire after inactivity, e.g. 24h, 12h",
+      "consolidateEvery": "Consolidate Every",
+      "consolidateEveryHint": "Flush memory every N messages",
+      "flushCooldown": "Flush Cooldown",
+      "flushCooldownHint": "Min interval between flushes, e.g. 2h"
     },
     "review": {
       "title": "Preview",

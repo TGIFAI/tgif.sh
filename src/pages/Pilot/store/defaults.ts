@@ -123,3 +123,9 @@ export const DEFAULT_AGENT_RUNTIME = {
   max_tokens: 4096,
   temperature: 0.7,
 }
+
+export const DEFAULT_AGENT_SESSION = {
+  ttl: '24h',
+  consolidate_every: 50,
+  flush_cooldown: '2h',
+}

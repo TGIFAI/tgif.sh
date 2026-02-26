@@ -1,6 +1,6 @@
 import { Box, Container, Heading, Icon, SimpleGrid, Text } from '@chakra-ui/react'
 import { useTranslation } from 'react-i18next'
-import { LuMessageSquare, LuBrain, LuPackage, LuShield, LuPuzzle, LuRocket } from 'react-icons/lu'
+import { LuMessageSquare, LuBrain, LuPackage, LuShield, LuPuzzle, LuDatabase } from 'react-icons/lu'
 import type { IconType } from 'react-icons'
 
 interface Feature {
@@ -15,7 +15,7 @@ const features: Feature[] = [
   { icon: LuPackage, titleKey: 'features.singleBinary.title', descKey: 'features.singleBinary.description' },
   { icon: LuShield, titleKey: 'features.sandbox.title', descKey: 'features.sandbox.description' },
   { icon: LuPuzzle, titleKey: 'features.skills.title', descKey: 'features.skills.description' },
-  { icon: LuRocket, titleKey: 'features.easyDeploy.title', descKey: 'features.easyDeploy.description' },
+  { icon: LuDatabase, titleKey: 'features.smartMemory.title', descKey: 'features.smartMemory.description' },
 ]
 
 export default function Features() {
